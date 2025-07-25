@@ -57,20 +57,20 @@ export default function HeroSection() {
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             While others focus on yesterday's SEO, you can be first to market with AI-optimized visibility. 
-            Join 500+ brands already optimizing for AI.
+            Join forward-thinking brands already optimizing for AI.
           </p>
 
           {/* Email Signup */}
           <div className="animate-fade-in-up mb-12" style={{ animationDelay: '0.4s' }}>
             <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6">
               <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
+                  className="pl-9 h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
                   required
                 />
               </div>
@@ -80,13 +80,13 @@ export default function HeroSection() {
               </Button>
             </form>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="demo" size="lg">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button variant="demo" size="lg" className="transform rotate-1">
                 Schedule Demo
               </Button>
               <div className="flex items-center text-sm text-muted-foreground">
                 <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                Join 500+ Brands Already Optimizing for AI
+                Join Forward-Thinking Brands Optimizing for AI
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function HeroSection() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 animate-scale-in"
+                className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 animate-pop-up hover:animate-float"
                 style={{ animationDelay: `${0.6 + index * 0.1}s` }}
               >
                 <div className="text-3xl lg:text-4xl font-bold mb-2">

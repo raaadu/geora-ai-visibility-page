@@ -4,8 +4,9 @@ import HeroSection from "@/components/HeroSection";
 import ComparisonSection from "@/components/ComparisonSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
-import SocialProofSection from "@/components/SocialProofSection";
+
 import FAQSection from "@/components/FAQSection";
+import TrustSection from "@/components/TrustSection";
 import Footer from "@/components/Footer";
 
 function GeoraLanding() {
@@ -18,7 +19,7 @@ function GeoraLanding() {
         <HeroSection />
         <ComparisonSection />
         <FeaturesSection />
-        <SocialProofSection />
+        <TrustSection />
         <PricingSection />
         <FAQSection />
       </main>

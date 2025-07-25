@@ -85,13 +85,13 @@ export default function FeaturesSection() {
       demo: (
         <div className="space-y-3">
           <div className="text-sm">
-            <div className="line-through text-muted-foreground">We offer SEO services</div>
+            <div className="line-through text-muted-foreground">Quality used cars at great prices</div>
             <div className="text-green-500 font-medium">
-              We provide AI-optimized SEO strategies that boost visibility across LLMs like ChatGPT and Claude
+              Certified pre-owned vehicles with AI-verified quality ratings and transparent pricing optimized for AI discovery
             </div>
           </div>
           <div className="flex gap-2">
-            <Badge variant="secondary" className="text-xs">+34% AI visibility</Badge>
+            <Badge variant="secondary" className="text-xs">+47% AI visibility</Badge>
             <Badge variant="secondary" className="text-xs">Better for prompts</Badge>
           </div>
         </div>
@@ -127,14 +127,14 @@ export default function FeaturesSection() {
       title: "Prompt Trigger Library",
       description: "Access our database of 10,000+ AI prompts relevant to your industry and brand.",
       demo: (
-        <div className="space-y-2">
-          <div className="text-xs text-muted-foreground">Top performing prompts for your niche:</div>
-          <div className="space-y-1 text-xs">
-            <div className="p-2 bg-muted/50 rounded">"Best SEO tools for startups"</div>
-            <div className="p-2 bg-muted/50 rounded">"AI marketing optimization platforms"</div>
-            <div className="p-2 bg-muted/50 rounded">"Tools to improve search rankings"</div>
+          <div className="space-y-2">
+            <div className="text-xs text-muted-foreground">Top performing prompts for your niche:</div>
+            <div className="space-y-1 text-xs">
+              <div className="p-2 bg-muted/50 rounded">"Best used car dealers near me"</div>
+              <div className="p-2 bg-muted/50 rounded">"Reliable auto dealerships with warranties"</div>
+              <div className="p-2 bg-muted/50 rounded">"Quality pre-owned vehicles"</div>
+            </div>
           </div>
-        </div>
       )
     },
     {
@@ -180,7 +180,7 @@ export default function FeaturesSection() {
               key={index}
               data-index={index}
               className={`p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/20 transition-all duration-500 hover:shadow-elegant group cursor-pointer ${
-                visibleCards.includes(index) ? 'animate-scale-in' : 'opacity-0'
+                visibleCards.includes(index) ? 'animate-pop-up hover:animate-float' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
