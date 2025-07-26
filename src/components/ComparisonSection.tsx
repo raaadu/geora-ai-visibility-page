@@ -85,26 +85,25 @@ export default function ComparisonSection() {
 
               {/* Visual Representation */}
               <div className="flex items-center justify-center">
-                <div className="relative">
-                  {/* AI Visibility Meter */}
-                  <div className="w-48 h-48 rounded-full border-8 border-border/20 relative overflow-hidden">
-                    <div
-                      className={`absolute bottom-0 left-0 right-0 bg-gradient-primary transition-all duration-1000 ${showAfter ? 'h-5/6' : 'h-1/6'}`}
-                      style={{ clipPath: 'circle(50% at 50% 100%)' }}
-                    ></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className={`text-3xl font-bold transition-all duration-1000 ${showAfter ? 'text-white' : 'text-muted-foreground'}`}>
-                          {showAfter ? '87%' : '12%'}
-                        </div>
-                        <div className={`text-sm transition-all duration-1000 ${showAfter ? 'text-white/80' : 'text-muted-foreground'}`}>
-                          AI Visibility
+                  <div className="relative">
+                    {/* AI Visibility Meter */}
+                    <div className="w-48 h-48 rounded-full border-8 border-border/20 relative overflow-hidden bg-background/50">
+                      <div
+                        className={`absolute bottom-0 left-0 right-0 bg-gradient-primary transition-all duration-1000 ease-out ${showAfter ? 'h-5/6' : 'h-1/6'}`}
+                      ></div>
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="text-center">
+                          <div className={`text-3xl font-bold transition-all duration-1000 ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`}>
+                            {showAfter ? '87%' : '12%'}
+                          </div>
+                          <div className={`text-sm transition-all duration-1000 ${showAfter ? 'text-foreground/80' : 'text-muted-foreground'}`}>
+                            AI Visibility
+                          </div>
                         </div>
                       </div>
                     </div>
+                    <Eye className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 transition-all duration-1000 z-20 ${showAfter ? 'text-foreground scale-110' : 'text-muted-foreground'}`} />
                   </div>
-                  <Eye className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 transition-all duration-1000 ${showAfter ? 'text-white scale-110' : 'text-muted-foreground'}`} />
-                </div>
               </div>
             </div>
 

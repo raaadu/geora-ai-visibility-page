@@ -82,14 +82,14 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={plan.name}
-              className={`relative p-8 bg-card/50 backdrop-blur-sm border transition-all duration-500 hover:shadow-elegant group ${
+              className={`relative p-6 lg:p-8 bg-card/50 backdrop-blur-sm border transition-all duration-500 group flex flex-col ${
                 plan.popular 
-                  ? 'border-primary/50 shadow-purple scale-105 lg:scale-110' 
-                  : 'border-border/50 hover:border-primary/20'
+                  ? 'border-primary/50 shadow-purple scale-105' 
+                  : 'border-border/50'
               } animate-scale-in`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -103,30 +103,30 @@ export default function PricingSection() {
               )}
 
               {/* Plan Header */}
-              <div className="text-center mb-8">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${
-                  plan.popular ? 'bg-gradient-primary' : 'bg-gradient-primary/10'
+              <div className="text-center mb-6">
+                <div className={`w-12 h-12 mx-auto mb-4 rounded-lg flex items-center justify-center ${
+                  plan.popular ? 'bg-primary' : 'bg-muted'
                 }`}>
-                  <plan.icon className={`h-8 w-8 ${plan.popular ? 'text-white' : 'text-primary'}`} />
+                  <plan.icon className={`h-6 w-6 ${plan.popular ? 'text-white' : 'text-muted-foreground'}`} />
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-muted-foreground text-sm mb-4 min-h-[2.5rem]">{plan.description}</p>
                 
                 <div className="flex items-baseline justify-center mb-4">
-                  <span className="text-4xl lg:text-5xl font-bold">{plan.price}</span>
+                  <span className="text-3xl lg:text-4xl font-bold">{plan.price}</span>
                   <span className="text-muted-foreground ml-1">{plan.period}</span>
                 </div>
               </div>
 
               {/* Features */}
-              <div className="space-y-3 mb-8">
+              <div className="space-y-2 mb-6 flex-1">
                 {plan.features.map((feature, featureIndex) => (
                   <div
                     key={featureIndex}
-                    className="flex items-start gap-3 text-sm"
+                    className="flex items-start gap-2 text-sm"
                   >
-                    <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -136,9 +136,7 @@ export default function PricingSection() {
               <Button
                 variant={plan.variant}
                 size="lg"
-                className={`w-full group-hover:scale-105 transition-transform duration-300 ${
-                  plan.popular ? 'animate-glow-pulse' : ''
-                }`}
+                className="w-full"
               >
                 {plan.cta}
               </Button>

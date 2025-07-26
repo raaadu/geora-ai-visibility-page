@@ -64,13 +64,12 @@ export default function HeroSection() {
           <div className="animate-fade-in-up mb-12" style={{ animationDelay: '0.4s' }}>
             <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6">
               <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-9 h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
+                  className="h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
                   required
                 />
               </div>
@@ -96,7 +95,7 @@ export default function HeroSection() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/20 transition-all duration-300 animate-pop-up hover:animate-float"
+                className="text-center p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 transition-all duration-300 animate-pop-up"
                 style={{ animationDelay: `${0.6 + index * 0.1}s` }}
               >
                 <div className="text-3xl lg:text-4xl font-bold mb-2">

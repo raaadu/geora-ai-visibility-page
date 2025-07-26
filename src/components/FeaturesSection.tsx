@@ -179,13 +179,13 @@ export default function FeaturesSection() {
             <Card
               key={index}
               data-index={index}
-              className={`p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/20 transition-all duration-500 hover:shadow-elegant group cursor-pointer ${
-                visibleCards.includes(index) ? 'animate-pop-up hover:animate-float' : 'opacity-0'
+              className={`p-6 bg-card/50 backdrop-blur-sm border-border/50 transition-all duration-500 group ${
+                visibleCards.includes(index) ? 'animate-pop-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-lg bg-gradient-primary/10 flex items-center justify-center mr-4 group-hover:bg-gradient-primary/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-lg bg-gradient-primary/10 flex items-center justify-center mr-4 transition-colors duration-300">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-semibold">{feature.title}</h3>
