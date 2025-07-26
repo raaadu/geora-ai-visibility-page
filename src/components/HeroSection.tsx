@@ -80,7 +80,7 @@ export default function HeroSection() {
             </form>
             
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="demo" size="lg" className="transform rotate-1">
+              <Button variant="demo" size="lg">
                 Schedule Demo
               </Button>
               <div className="flex items-center text-sm text-muted-foreground">

@@ -38,17 +38,17 @@ export default function ComparisonSection() {
         {/* Toggle Switch */}
         <div className="flex justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="relative bg-muted p-1 rounded-lg">
-            <div className={`absolute top-1 left-1 h-10 bg-primary rounded-md transition-all duration-200 ease-out ${showAfter ? 'w-28 translate-x-28' : 'w-28'}`}></div>
+            <div className={`absolute top-1 left-1 h-10 bg-primary rounded-md transition-all duration-300 ease-out ${showAfter ? 'w-28 translate-x-28' : 'w-28'}`}></div>
             <Button
               variant="ghost"
-              className={`relative z-10 h-10 px-6 transition-colors duration-200 ease-out ${!showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              className={`relative z-10 h-10 px-6 transition-colors duration-300 ease-out ${!showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
               onClick={() => setShowAfter(false)}
             >
               Before Geora
             </Button>
             <Button
               variant="ghost"
-              className={`relative z-10 h-10 px-6 transition-colors duration-200 ease-out ${showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              className={`relative z-10 h-10 px-6 transition-colors duration-300 ease-out ${showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
               onClick={() => setShowAfter(true)}
             >
               After Geora
