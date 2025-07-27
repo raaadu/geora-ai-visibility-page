@@ -57,7 +57,7 @@ export default function AnimatedCounter({
   return (
     <div 
       ref={countRef}
-      className={`animate-counter ${className}`}
+      className={className}
     >
       {count}{suffix}
     </div>

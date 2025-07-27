@@ -24,31 +24,31 @@ export default function ComparisonSection() {
     <section id="demo" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in-up">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             What Makes{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Geora Different
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             See the transformation that happens when brands optimize for AI visibility
           </p>
         </div>
 
         {/* Toggle Switch */}
-        <div className="flex justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="flex justify-center mb-12">
           <div className="relative bg-muted p-1 rounded-lg">
-            <div className={`absolute top-1 left-1 h-10 bg-primary rounded-md transition-all duration-300 ease-out ${showAfter ? 'w-28 translate-x-28' : 'w-28'}`}></div>
+            <div className={`absolute top-1 left-1 h-10 bg-primary rounded-md ${showAfter ? 'w-28 translate-x-28' : 'w-28'}`}></div>
             <Button
               variant="ghost"
-              className={`relative z-10 h-10 px-6 transition-colors duration-300 ease-out ${!showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              className={`relative z-10 h-10 px-6 ${!showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
               onClick={() => setShowAfter(false)}
             >
               Before Geora
             </Button>
             <Button
               variant="ghost"
-              className={`relative z-10 h-10 px-6 transition-colors duration-300 ease-out ${showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              className={`relative z-10 h-10 px-6 ${showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
               onClick={() => setShowAfter(true)}
             >
               After Geora
@@ -73,8 +73,7 @@ export default function ComparisonSection() {
                   {(showAfter ? afterItems : beforeItems).map((item, index) => (
                     <div
                       key={index}
-                      className={`flex items-center space-x-3 p-3 rounded-lg bg-background/50 border border-border/30 transition-all duration-300 ${showAfter ? 'animate-slide-in-right' : 'animate-fade-in'}`}
-                      style={{ animationDelay: `${index * 0.1}s` }}
+                      className="flex items-center space-x-3 p-3 rounded-lg bg-background/50 border border-border/30"
                     >
                       <item.icon className={`h-5 w-5 ${item.color}`} />
                       <span className="text-foreground">{item.text}</span>
@@ -89,27 +88,27 @@ export default function ComparisonSection() {
                     {/* AI Visibility Meter */}
                     <div className="w-48 h-48 rounded-full border-8 border-border/20 relative overflow-hidden bg-background/50">
                       <div
-                        className={`absolute bottom-0 left-0 right-0 bg-gradient-primary transition-all duration-1000 ease-out ${showAfter ? 'h-5/6' : 'h-1/6'}`}
+                        className={`absolute bottom-0 left-0 right-0 bg-gradient-primary ${showAfter ? 'h-5/6' : 'h-1/6'}`}
                       ></div>
                       <div className="absolute inset-0 flex items-center justify-center z-10">
                         <div className="text-center">
-                          <div className={`text-3xl font-bold transition-all duration-1000 ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`}>
+                          <div className={`text-3xl font-bold ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`}>
                             {showAfter ? '87%' : '12%'}
                           </div>
-                          <div className={`text-sm transition-all duration-1000 ${showAfter ? 'text-foreground/80' : 'text-muted-foreground'}`}>
+                          <div className={`text-sm ${showAfter ? 'text-foreground/80' : 'text-muted-foreground'}`}>
                             AI Visibility
                           </div>
                         </div>
                       </div>
                     </div>
-                    <Eye className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 transition-all duration-1000 z-20 ${showAfter ? 'text-foreground scale-110' : 'text-muted-foreground'}`} />
+                    <Eye className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 z-20 ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`} />
                   </div>
               </div>
             </div>
 
             {/* CTA */}
             <div className="text-center mt-12 pt-8 border-t border-border/30">
-              <Button variant="hero" size="lg" className="animate-glow-pulse">
+              <Button variant="hero" size="lg">
                 Start Your AI Optimization
               </Button>
             </div>
