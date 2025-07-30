@@ -22,10 +22,12 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Geora
-            </div>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/23a6d5ec-7702-469b-bab4-cccba29c9c87.png" 
+              alt="Geora Logo" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}

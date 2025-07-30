@@ -1,147 +1,64 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Star, Zap, Crown } from "lucide-react";
+import { CheckCircle, Star } from "lucide-react";
 
 export default function PricingSection() {
-  const plans = [
-    {
-      name: "Starter",
-      price: "$49",
-      period: "/month",
-      description: "Perfect for small businesses getting started with AI optimization",
-      features: [
-        "AI Visibility Score tracking",
-        "Basic prompt simulation",
-        "5 competitor comparisons",
-        "Monthly visibility reports",
-        "Email support",
-        "Up to 3 websites"
-      ],
-      cta: "Start Free Trial",
-      variant: "demo" as const,
-      icon: Zap
-    },
-    {
-      name: "Professional",
-      price: "$149",
-      period: "/month",
-      description: "Most popular choice for growing companies",
-      badge: "MOST POPULAR",
-      features: [
-        "Everything in Starter",
-        "Real-time AI simulation",
-        "Grammarly-style content rewrites",
-        "Cross-platform signal tracking",
-        "Prompt Trigger Library access",
-        "Weekly optimization reports",
-        "Priority support",
-        "Up to 10 websites",
-        "Custom bio optimization"
-      ],
-      cta: "Start Free Trial",
-      variant: "hero" as const,
-      popular: true,
-      icon: Star
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      period: "",
-      description: "Advanced features for large organizations",
-      features: [
-        "Everything in Professional",
-        "Custom AI model training",
-        "Dedicated account manager",
-        "White-label reporting",
-        "API access",
-        "Custom integrations",
-        "Advanced analytics",
-        "Unlimited websites",
-        "Phone support",
-        "SLA guarantee"
-      ],
-      cta: "Contact Sales",
-      variant: "demo" as const,
-      icon: Crown
-    }
-  ];
-
   return (
     <section id="pricing" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Choose Your{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
-              AI Advantage
+              Special Offer
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get started with AI optimization today. All plans include 14-day free trial.
+            Custom plans tailored to your brand's AI visibility needs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {plans.map((plan, index) => (
-            <Card
-              key={plan.name}
-              className={`relative p-6 lg:p-8 bg-card/50 backdrop-blur-sm border transition-all duration-500 group flex flex-col ${
-                plan.popular 
-                  ? 'border-primary/50 shadow-purple scale-105' 
-                  : 'border-border/50'
-              } animate-scale-in`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {/* Popular Badge */}
-              {plan.badge && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-gradient-primary text-white px-4 py-1 font-semibold">
-                    {plan.badge}
-                  </Badge>
-                </div>
-              )}
+        <div className="max-w-2xl mx-auto">
+          <Card className="relative p-8 lg:p-12 bg-card/50 backdrop-blur-sm border border-primary/50 shadow-purple text-center">
+            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-primary flex items-center justify-center">
+              <Star className="h-8 w-8 text-white" />
+            </div>
+            
+            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+              Limited Time: Free AI Visibility Audit
+            </h3>
+            
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+              Get a personalized assessment of your brand's AI visibility and a custom optimization strategy. 
+              No commitment required.
+            </p>
 
-              {/* Plan Header */}
-              <div className="text-center mb-6">
-                <div className={`w-12 h-12 mx-auto mb-4 rounded-lg flex items-center justify-center ${
-                  plan.popular ? 'bg-primary' : 'bg-muted'
-                }`}>
-                  <plan.icon className={`h-6 w-6 ${plan.popular ? 'text-white' : 'text-muted-foreground'}`} />
-                </div>
-                
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4 min-h-[2.5rem]">{plan.description}</p>
-                
-                <div className="flex items-baseline justify-center mb-4">
-                  <span className="text-3xl lg:text-4xl font-bold">{plan.price}</span>
-                  <span className="text-muted-foreground ml-1">{plan.period}</span>
-                </div>
+            <div className="space-y-4 mb-8 text-left max-w-md mx-auto">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                <span>Complete AI visibility assessment across major LLMs</span>
               </div>
-
-              {/* Features */}
-              <div className="space-y-2 mb-6 flex-1">
-                {plan.features.map((feature, featureIndex) => (
-                  <div
-                    key={featureIndex}
-                    className="flex items-start gap-2 text-sm"
-                  >
-                    <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                <span>Competitive analysis and positioning insights</span>
               </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                <span>Custom optimization roadmap and strategy</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                <span>1-on-1 consultation with AI visibility expert</span>
+              </div>
+            </div>
 
-              {/* CTA Button */}
-              <Button
-                variant={plan.variant}
-                size="lg"
-                className="w-full"
-              >
-                {plan.cta}
-              </Button>
-            </Card>
-          ))}
+            <Button variant="hero" size="lg" className="w-full sm:w-auto px-8">
+              Book a Free Call
+            </Button>
+            
+            <p className="text-sm text-muted-foreground mt-4">
+              Limited spots available • No credit card required
+            </p>
+          </Card>
         </div>
 
         {/* Trust Indicators */}
@@ -149,7 +66,7 @@ export default function PricingSection() {
           <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-green-500" />
-              14-day free trial
+              Free consultation
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-green-500" />
@@ -157,7 +74,7 @@ export default function PricingSection() {
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-4 w-4 text-green-500" />
-              Cancel anytime
+              Expert guidance
             </div>
           </div>
           <p className="text-muted-foreground">
