@@ -179,8 +179,8 @@ export default function FeaturesSection() {
             <Card
               key={index}
               data-index={index}
-              className={`p-6 bg-card/50 backdrop-blur-sm border-border/50 transition-all duration-500 group ${
-                visibleCards.includes(index) ? 'animate-pop-up' : 'opacity-0'
+              className={`p-6 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group ${
+                visibleCards.includes(index) ? 'animate-fade-in' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >

@@ -35,20 +35,27 @@ export default function ComparisonSection() {
           </p>
         </div>
 
-        {/* Toggle Switch */}
+        {/* Simple Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="relative bg-muted p-1 rounded-lg">
-            <div className={`absolute top-1 left-1 h-10 bg-primary rounded-md ${showAfter ? 'w-28 translate-x-28' : 'w-28'}`}></div>
+          <div className="flex bg-muted rounded-xl p-2 gap-2">
             <Button
-              variant="ghost"
-              className={`relative z-10 h-10 px-6 ${!showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              variant={!showAfter ? "default" : "ghost"}
+              className={`px-8 py-3 rounded-lg font-medium transition-all duration-300 ${
+                !showAfter 
+                  ? 'bg-primary text-primary-foreground shadow-md' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
               onClick={() => setShowAfter(false)}
             >
               Before Geora
             </Button>
             <Button
-              variant="ghost"
-              className={`relative z-10 h-10 px-6 ${showAfter ? 'text-primary-foreground' : 'text-foreground'}`}
+              variant={showAfter ? "default" : "ghost"}
+              className={`px-8 py-3 rounded-lg font-medium transition-all duration-300 ${
+                showAfter 
+                  ? 'bg-primary text-primary-foreground shadow-md' 
+                  : 'text-muted-foreground hover:text-foreground'
+              }`}
               onClick={() => setShowAfter(true)}
             >
               After Geora
@@ -56,63 +63,64 @@ export default function ComparisonSection() {
           </div>
         </div>
 
-        {/* Comparison Cards */}
-        <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12 bg-gradient-subtle border-border/50 shadow-elegant">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Before/After Content */}
-              <div className="space-y-6">
-                <div className="flex items-center mb-6">
-                  <div className={`w-3 h-3 rounded-full mr-3 ${showAfter ? 'bg-green-500' : 'bg-red-500'}`}></div>
-                  <h3 className="text-2xl font-bold">
-                    {showAfter ? 'After Geora' : 'Before Geora'}
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  {(showAfter ? afterItems : beforeItems).map((item, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-3 p-3 rounded-lg bg-background/50 border border-border/30"
-                    >
-                      <item.icon className={`h-5 w-5 ${item.color}`} />
-                      <span className="text-foreground">{item.text}</span>
-                    </div>
-                  ))}
-                </div>
+        {/* Simple Comparison Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Before Card */}
+            <Card className={`p-8 transition-all duration-500 ${
+              !showAfter 
+                ? 'bg-red-50 dark:bg-red-950/20 border-red-200 dark:border-red-800/50 scale-105' 
+                : 'bg-muted/30 border-border/30 opacity-60'
+            }`}>
+              <div className="flex items-center mb-6">
+                <div className="w-4 h-4 rounded-full bg-red-500 mr-3"></div>
+                <h3 className="text-2xl font-bold text-red-600 dark:text-red-400">Before Geora</h3>
               </div>
-
-              {/* Visual Representation */}
-              <div className="flex items-center justify-center">
-                  <div className="relative">
-                    {/* AI Visibility Meter */}
-                    <div className="w-48 h-48 rounded-full border-8 border-border/20 relative overflow-hidden bg-background/50">
-                      <div
-                        className={`absolute bottom-0 left-0 right-0 bg-gradient-primary ${showAfter ? 'h-5/6' : 'h-1/6'}`}
-                      ></div>
-                      <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="text-center">
-                          <div className={`text-3xl font-bold ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`}>
-                            {showAfter ? '87%' : '12%'}
-                          </div>
-                          <div className={`text-sm ${showAfter ? 'text-foreground/80' : 'text-muted-foreground'}`}>
-                            AI Visibility
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <Eye className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 z-20 ${showAfter ? 'text-foreground' : 'text-muted-foreground'}`} />
+              <div className="space-y-4">
+                {beforeItems.map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-background/50">
+                    <item.icon className={`h-5 w-5 ${item.color}`} />
+                    <span className="text-foreground">{item.text}</span>
                   </div>
+                ))}
               </div>
-            </div>
+              <div className="mt-6 text-center">
+                <div className="text-4xl font-bold text-red-500 mb-2">12%</div>
+                <div className="text-muted-foreground">AI Visibility Score</div>
+              </div>
+            </Card>
 
-            {/* CTA */}
-            <div className="text-center mt-12 pt-8 border-t border-border/30">
-              <Button variant="hero" size="lg">
-                Start Your AI Optimization
-              </Button>
-            </div>
-          </Card>
+            {/* After Card */}
+            <Card className={`p-8 transition-all duration-500 ${
+              showAfter 
+                ? 'bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-800/50 scale-105' 
+                : 'bg-muted/30 border-border/30 opacity-60'
+            }`}>
+              <div className="flex items-center mb-6">
+                <div className="w-4 h-4 rounded-full bg-green-500 mr-3"></div>
+                <h3 className="text-2xl font-bold text-green-600 dark:text-green-400">After Geora</h3>
+              </div>
+              <div className="space-y-4">
+                {afterItems.map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3 p-4 rounded-lg bg-background/50">
+                    <item.icon className={`h-5 w-5 ${item.color}`} />
+                    <span className="text-foreground">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 text-center">
+                <div className="text-4xl font-bold text-green-500 mb-2">87%</div>
+                <div className="text-muted-foreground">AI Visibility Score</div>
+              </div>
+            </Card>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <Button variant="hero" size="lg">
+              Start Your AI Optimization
+            </Button>
+          </div>
         </div>
       </div>
     </section>
