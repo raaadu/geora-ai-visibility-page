@@ -23,7 +23,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/90 via-blue-900/90 to-purple-900/90 backdrop-blur-lg border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -32,11 +32,11 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
             onClick={restartAnimations}
           >
             <img 
-              src="/src/assets/geora-logo-white.png" 
+              src="/lovable-uploads/f93ee773-8231-457d-a97d-6f3dc0437156.png" 
               alt="Geora Logo" 
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
+              className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200 mix-blend-multiply dark:mix-blend-screen"
             />
-            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-white/70" />
+            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-muted-foreground" />
           </div>
 
           {/* Desktop Navigation */}
