@@ -1,14 +1,19 @@
 import { useState } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
-  isDark: boolean;
-  toggleTheme: () => void;
+  isDark?: boolean;
+  toggleTheme?: () => void;
 }
 
 export default function Header({ isDark, toggleTheme }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const restartAnimations = () => {
+    // Force page reload to restart all animations
+    window.location.reload();
+  };
 
   const navItems = [
     { label: "Features", href: "#features" },
@@ -22,12 +27,16 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center gap-3">
+          <div 
+            className="flex items-center gap-3 cursor-pointer group"
+            onClick={restartAnimations}
+          >
             <img 
-              src="/lovable-uploads/23a6d5ec-7702-469b-bab4-cccba29c9c87.png" 
+              src="/lovable-uploads/f93ee773-8231-457d-a97d-6f3dc0437156.png" 
               alt="Geora Logo" 
-              className="h-8 w-auto"
+              className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200 mix-blend-multiply dark:mix-blend-screen"
             />
+            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-muted-foreground" />
           </div>
 
           {/* Desktop Navigation */}
@@ -44,16 +53,8 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Desktop CTA + Theme Toggle */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="hover:bg-accent"
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
             <Button variant="demo" size="default">
               Schedule Demo
             </Button>
@@ -63,15 +64,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="hover:bg-accent"
-            >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+          <div className="md:hidden">
             <Button
               variant="ghost"
               size="icon"

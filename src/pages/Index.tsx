@@ -10,11 +10,9 @@ import TrustSection from "@/components/TrustSection";
 import Footer from "@/components/Footer";
 
 function GeoraLanding() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Header isDark={theme === "dark"} toggleTheme={toggleTheme} />
+      <Header />
       <main>
         <HeroSection />
         <ComparisonSection />
