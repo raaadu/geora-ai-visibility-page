@@ -23,7 +23,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-900/95 via-purple-800/95 to-purple-900/95 backdrop-blur-lg border-b border-purple-500/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#8B7EC8]/95 backdrop-blur-lg border-b border-white/10">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -83,7 +83,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-purple-500/20 bg-purple-900/95 backdrop-blur-lg">
+          <div className="md:hidden border-t border-white/10 bg-[#8B7EC8]/95 backdrop-blur-lg">
             <nav className="flex flex-col space-y-4 py-4">
               {navItems.map((item) => (
                 <a
@@ -95,7 +95,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
                   {item.label}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-purple-500/20">
+              <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-white/10">
                 <Button variant="demo" size="default" className="w-full">
                   Schedule Demo
                 </Button>

@@ -37,11 +37,11 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-br from-purple-950 via-purple-900 to-purple-800 relative overflow-hidden">
+    <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-subtle relative overflow-hidden">
       {/* Background elements */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0iI0ZGRkZGRiIgZmlsbC1vcGFjaXR5PSIwLjEiLz4KPC9zdmc+')] opacity-40"></div>
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-300/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-grid-white/10"></div>
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-geora-purple/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-geora-blue/20 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
