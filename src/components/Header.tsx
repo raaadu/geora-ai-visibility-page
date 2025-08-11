@@ -23,7 +23,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-purple-900/95 via-purple-800/95 to-purple-900/95 backdrop-blur-lg border-b border-purple-500/20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -32,11 +32,16 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
             onClick={restartAnimations}
           >
             <img 
-              src="/lovable-uploads/f93ee773-8231-457d-a97d-6f3dc0437156.png" 
-              alt="Geora Logo" 
-              className="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200 mix-blend-multiply dark:mix-blend-screen"
+              src="/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png" 
+              alt="Geora Icon" 
+              className="h-10 w-10 opacity-90 hover:opacity-100 transition-opacity duration-200"
             />
-            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-muted-foreground" />
+            <img 
+              src="/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png" 
+              alt="Geora Logo" 
+              className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
+            />
+            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-white/60" />
           </div>
 
           {/* Desktop Navigation */}
@@ -45,10 +50,10 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
+                className="text-white/80 hover:text-white transition-colors duration-200 relative group font-medium"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
           </nav>
@@ -69,6 +74,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:bg-white/10"
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
@@ -77,19 +83,19 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-lg">
+          <div className="md:hidden border-t border-purple-500/20 bg-purple-900/95 backdrop-blur-lg">
             <nav className="flex flex-col space-y-4 py-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 px-4 py-2"
+                  className="text-white/80 hover:text-white transition-colors duration-200 px-4 py-2 font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-border">
+              <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-purple-500/20">
                 <Button variant="demo" size="default" className="w-full">
                   Schedule Demo
                 </Button>
