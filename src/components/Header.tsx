@@ -57,7 +57,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-lg border-b border-slate-700/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 via-purple-900/90 to-slate-900/95 backdrop-blur-lg border-b border-slate-700/50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -117,7 +117,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-slate-700/50 bg-slate-900/95 backdrop-blur-lg">
+          <div className="md:hidden border-t border-slate-700/50 bg-gradient-to-r from-slate-900/95 via-purple-900/90 to-slate-900/95 backdrop-blur-lg">
             <nav className="flex flex-col space-y-4 py-4">
               {navItems.map((item) => (
                 <a

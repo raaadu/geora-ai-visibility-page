@@ -60,33 +60,26 @@ export default function HeroSection() {
             Join forward-thinking brands already optimizing for AI.
           </p>
 
-          {/* Email Signup */}
+          {/* Book a Call Section */}
           <div className="mb-12">
-            <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-6">
-              <div className="relative flex-1">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
-                  required
-                />
-              </div>
-              <Button type="submit" variant="hero" size="lg" className="h-12">
-                Join Waitlist
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </form>
+            <h2 className="text-2xl md:text-3xl font-bold mb-8">Book a Call</h2>
             
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button variant="demo" size="lg">
-                Schedule Demo
-              </Button>
-              <div className="flex items-center text-sm text-muted-foreground">
-                <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                Join Forward-Thinking Brands Optimizing for AI
-              </div>
+            {/* Calendly Inline Widget */}
+            <div className="w-full max-w-4xl mx-auto">
+              <iframe 
+                src="https://calendly.com/hello-georaai/30min?embed_domain=localhost&embed_type=Inline"
+                width="100%" 
+                height="700"
+                frameBorder="0"
+                scrolling="no"
+                className="rounded-lg border border-border/50 bg-background/50 backdrop-blur-sm"
+                title="Schedule a call with Geora AI"
+              ></iframe>
+            </div>
+            
+            <div className="flex items-center justify-center mt-6 text-sm text-muted-foreground">
+              <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
+              Join Forward-Thinking Brands Optimizing for AI
             </div>
           </div>
 
