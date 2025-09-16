@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
-import { Menu, X, RotateCcw } from "lucide-react";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
 
 interface HeaderProps {
   isDark?: boolean;
@@ -10,44 +9,6 @@ interface HeaderProps {
 
 export default function Header({ isDark, toggleTheme }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [processedLogos, setProcessedLogos] = useState<{
-    icon: string | null;
-    text: string | null;
-  }>({ icon: null, text: null });
-
-  useEffect(() => {
-    const processLogos = async () => {
-      try {
-        // Process icon
-        const iconResponse = await fetch('/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png');
-        const iconBlob = await iconResponse.blob();
-        const iconImage = await loadImage(iconBlob);
-        const processedIconBlob = await removeBackground(iconImage);
-        const iconUrl = URL.createObjectURL(processedIconBlob);
-
-        // Process text logo
-        const textResponse = await fetch('/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png');
-        const textBlob = await textResponse.blob();
-        const textImage = await loadImage(textBlob);
-        const processedTextBlob = await removeBackground(textImage);
-        const textUrl = URL.createObjectURL(processedTextBlob);
-
-        setProcessedLogos({
-          icon: iconUrl,
-          text: textUrl
-        });
-      } catch (error) {
-        console.error('Error processing logos:', error);
-      }
-    };
-
-    processLogos();
-  }, []);
-
-  const restartAnimations = () => {
-    // Force page reload to restart all animations
-    window.location.reload();
-  };
 
   const navItems = [
     { label: "Features", href: "#features" },
@@ -61,21 +22,17 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div 
-            className="flex items-center gap-3 cursor-pointer group"
-            onClick={restartAnimations}
-          >
+          <div className="flex items-center gap-3 cursor-pointer group hover:opacity-90 transition-opacity duration-200">
             <img 
-              src={processedLogos.icon || "/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png"} 
+              src="/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png" 
               alt="Geora Icon" 
-              className="h-10 w-10 opacity-90 hover:opacity-100 transition-opacity duration-200"
+              className="h-8 w-8 object-contain"
             />
             <img 
-              src={processedLogos.text || "/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png"} 
+              src="/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png" 
               alt="Geora Logo" 
-              className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
+              className="h-6 w-auto object-contain"
             />
-            <RotateCcw className="h-4 w-4 opacity-0 group-hover:opacity-50 transition-opacity duration-200 text-slate-400" />
           </div>
 
           {/* Desktop Navigation */}

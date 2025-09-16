@@ -69,10 +69,10 @@ export default function HeroSection() {
               <iframe 
                 src="https://calendly.com/hello-georaai/30min?embed_domain=localhost&embed_type=Inline"
                 width="100%" 
-                height="700"
+                height="1000"
                 frameBorder="0"
-                scrolling="no"
-                className="rounded-lg border border-border/50 bg-background/50 backdrop-blur-sm"
+                scrolling="yes"
+                className="rounded-lg border border-border/50 bg-background/50 backdrop-blur-sm md:h-[1000px] h-[700px] min-h-[700px]"
                 title="Schedule a call with Geora AI"
               ></iframe>
             </div>
