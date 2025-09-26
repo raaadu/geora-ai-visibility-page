@@ -56,38 +56,49 @@ export default function Footer() {
 
   return (
     <footer className="bg-background border-t border-border">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-subtle">
-        <div className="container mx-auto px-4 lg:px-8 py-16">
+      {/* Call to Action Section */}
+      <div className="bg-gradient-subtle relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-geora-purple/30 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-geora-blue/30 rounded-full blur-3xl"></div>
+        </div>
+        <div className="container mx-auto px-4 lg:px-8 py-16 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Stay Ahead of{" "}
+              Ready to Dominate{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                AI Trends
+                AI Recommendations?
               </span>
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Get weekly insights on AI optimization, industry trends, and exclusive tips to dominate AI recommendations.
+              Join forward-thinking brands already optimizing for AI. Get your free visibility audit and discover your AI opportunity.
             </p>
             
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <div className="relative flex-1">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="pl-10 h-12 bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary"
-                />
-              </div>
-              <Button variant="hero" size="lg" className="h-12">
-                Subscribe
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+              <Button 
+                size="lg" 
+                className="h-12 px-8"
+                onClick={() => window.open('https://calendly.com/hello-georaai/30min', '_blank')}
+              >
+                Get Your Free AI Visibility Report
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </form>
+            </div>
             
-            <p className="text-xs text-muted-foreground mt-4">
-              Join 10,000+ marketers. Unsubscribe anytime.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-3xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary mb-2">5 min</div>
+                <p className="text-sm text-muted-foreground">Quick audit call</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary mb-2">Free</div>
+                <p className="text-sm text-muted-foreground">No commitment</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary mb-2">Instant</div>
+                <p className="text-sm text-muted-foreground">Results you can use</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

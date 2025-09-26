@@ -13,8 +13,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
   const navItems = [
     { label: "Features", href: "#features" },
     { label: "Demo", href: "#demo" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Resources", href: "#resources" }
+    { label: "Pricing", href: "#pricing" }
   ];
 
   return (
@@ -22,18 +21,16 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Combined Logo */}
-          <div className="flex items-center gap-2 cursor-pointer group hover:opacity-90 transition-opacity duration-200">
+          <div className="flex items-center gap-3 cursor-pointer group hover:opacity-90 transition-opacity duration-200">
             <img 
               src="/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png" 
               alt="Geora Icon" 
-              className="h-8 w-8 object-contain"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-8 w-8 object-contain brightness-0 invert"
             />
             <img 
               src="/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png" 
               alt="Geora Logo" 
-              className="h-6 w-auto object-contain"
-              style={{ filter: 'brightness(0) invert(1)' }}
+              className="h-7 w-auto object-contain brightness-0 invert"
             />
           </div>
 
