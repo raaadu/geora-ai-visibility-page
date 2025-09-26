@@ -1,11 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { CheckCircle, Star } from "lucide-react";
+import { CheckCircle, Star, ArrowRight } from "lucide-react";
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section id="pricing" className="py-16 lg:py-24 bg-gradient-dark relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-grid-white/5"></div>
+      <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-geora-purple/10 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        {/* Main CTA at top of pricing */}
+        <div className="text-center mb-16">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6 mb-4"
+            onClick={() => window.open('https://calendly.com/hello-georaai/30min', '_blank')}
+          >
+            Get Your Free AI Visibility Report
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Book a call with us to discuss the results of your free AI visibility report.
+          </p>
+        </div>
+        
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -51,7 +70,11 @@ export default function PricingSection() {
               </div>
             </div>
 
-            <Button variant="hero" size="lg" className="w-full sm:w-auto px-8">
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto px-8"
+              onClick={() => window.open('https://calendly.com/hello-georaai/30min', '_blank')}
+            >
               Book a Free Call
             </Button>
             

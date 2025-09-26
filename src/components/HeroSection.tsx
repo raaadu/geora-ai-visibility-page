@@ -60,24 +60,22 @@ export default function HeroSection() {
             Join forward-thinking brands already optimizing for AI.
           </p>
 
-          {/* Book a Call Section */}
+          {/* Main CTA Section */}
           <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">Book a Call</h2>
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-6 mb-4"
+              onClick={() => window.open('https://calendly.com/hello-georaai/30min', '_blank')}
+            >
+              Get Your Free AI Visibility Report
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
             
-            {/* Calendly Inline Widget */}
-            <div className="w-full max-w-4xl mx-auto">
-              <iframe 
-                src="https://calendly.com/hello-georaai/30min?embed_domain=localhost&embed_type=Inline"
-                width="100%" 
-                height="1000"
-                frameBorder="0"
-                scrolling="yes"
-                className="rounded-lg border border-border/50 bg-background/50 backdrop-blur-sm md:h-[1000px] h-[700px] min-h-[700px]"
-                title="Schedule a call with Geora AI"
-              ></iframe>
-            </div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+              Book a call with us to discuss the results of your free AI visibility report.
+            </p>
             
-            <div className="flex items-center justify-center mt-6 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center text-sm text-muted-foreground">
               <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
               Join Forward-Thinking Brands Optimizing for AI
             </div>
