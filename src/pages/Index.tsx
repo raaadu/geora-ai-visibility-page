@@ -14,12 +14,12 @@ function GeoraLanding() {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       <main>
-        <PricingSection />
         <HeroSection />
         <ComparisonSection />
         <FeaturesSection />
         <TrustSection />
         <FAQSection />
+        <PricingSection />
       </main>
       <Footer />
     </div>
