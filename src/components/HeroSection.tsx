@@ -54,22 +54,11 @@ export default function HeroSection() {
       </div>
       
       <div className="container mx-auto px-4 lg:px-8 relative z-10 py-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Logo Section */}
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative">
-              <img 
-                src={georaLogoIcon} 
-                alt="Geora AI Logo" 
-                className="w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain drop-shadow-2xl"
-              />
-            </div>
-          </div>
-
+        <div className="max-w-4xl mx-auto">
           {/* Content Section */}
-          <div className="text-center lg:text-left">
+          <div className="text-center">
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
               Don't Let Your{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Competitors Dominate
@@ -93,7 +82,7 @@ export default function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
-              <div className="flex items-center justify-center lg:justify-start text-sm text-muted-foreground mt-4">
+              <div className="flex items-center justify-center text-sm text-muted-foreground mt-4">
                 <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
                 Join Forward-Thinking Brands Optimizing for AI
               </div>

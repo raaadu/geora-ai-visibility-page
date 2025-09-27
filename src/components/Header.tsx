@@ -23,7 +23,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
           {/* Combined Logo */}
           <div className="flex items-center gap-3 cursor-pointer group hover:opacity-90 transition-opacity duration-200">
             <img 
-              src="/lovable-uploads/f66def2f-c175-45e1-a2fd-26742e104c89.png" 
+              src="/src/assets/geora-logo-icon.png" 
               alt="Geora Icon" 
               className="h-8 w-8 object-contain brightness-0 invert"
             />
