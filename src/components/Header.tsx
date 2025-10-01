@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import georaIcon from "@/assets/geora-logo-icon.png";
+import georaLogo from "@/assets/geora-logo-white.png";
 
 interface HeaderProps {
   isDark?: boolean;
@@ -20,17 +22,17 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
     <header className="fixed top-0 left-0 right-0 z-50 bg-geora-dark/95 backdrop-blur-lg border-b border-border/50">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Combined Logo */}
+          {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer group hover:opacity-90 transition-opacity duration-200">
             <img 
-              src="/src/assets/geora-logo-icon.png" 
+              src={georaIcon}
               alt="Geora Icon" 
-              className="h-8 w-8 object-contain brightness-0 invert"
+              className="h-6 w-6 object-contain"
             />
             <img 
-              src="/lovable-uploads/af0d949e-d8dc-4aa2-a602-f10b816398bb.png" 
+              src={georaLogo}
               alt="Geora Logo" 
-              className="h-7 w-auto object-contain brightness-0 invert"
+              className="h-8 w-auto object-contain"
             />
           </div>
 
