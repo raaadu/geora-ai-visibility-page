@@ -29,11 +29,13 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
               alt="Geora Icon" 
               className="h-6 w-6 object-contain"
             />
-            <img 
-              src={georaLogo}
-              alt="Geora Logo" 
-              className="h-8 w-auto object-contain"
-            />
+            <div className="bg-gray-800/50 rounded-md p-1">
+              <img 
+                src={georaLogo}
+                alt="Geora Logo" 
+                className="h-8 w-auto object-contain"
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}
