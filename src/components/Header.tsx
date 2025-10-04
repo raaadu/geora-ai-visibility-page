@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import georaIcon from "@/assets/geora-logo-icon.png";
+import georaIcon from "@/assets/geora-logo-square.jpg";
 import georaLogo from "@/assets/geora-logo-white.png";
 
 interface HeaderProps {
